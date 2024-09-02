@@ -11,9 +11,7 @@ const createToken = (user) => {
   );
 };
 
-// @desc    Register a new user
-// @route   POST /api/auth/signup
-// @access  Public
+
 exports.signup = async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -53,9 +51,7 @@ exports.signup = async (req, res) => {
   }
 };
 
-// @desc    Login user
-// @route   POST /api/auth/login
-// @access  Public
+
 exports.login = async (req, res) => {
   const { email, password } = req.body;
 
@@ -94,9 +90,7 @@ exports.login = async (req, res) => {
   }
 };
 
-// @desc    Logout user
-// @route   POST /api/auth/logout
-// @access  Private
+
 exports.logout = (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
