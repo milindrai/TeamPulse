@@ -12,10 +12,7 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: 'http://localhost:3000', // Adjust based on frontend URL
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.json());
 
 // Routes
@@ -24,7 +21,7 @@ app.use('/api/auth', authRoutes);
 
 // Basic Route
 app.get('/', (req, res) => {
-  res.send('Welcome to TaskFusion API');
+  res.send('Welcome to TeamPulse API');
 });
 
 // Handle undefined Routes
@@ -33,5 +30,5 @@ app.use((req, res) => {
 });
 
 // Start Server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5007;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
